@@ -1,0 +1,6 @@
+---
+# defaults file for vector-role
+
+vector_version: 'latest'
+vector_service_ensure: 'started'
+vector_service_enable: true
