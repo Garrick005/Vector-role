@@ -43,5 +43,4 @@
     name: nginx
     state: restarted
     enabled: yes
->>>>>>> beefe3c (Lighthouse role)
   become: true  
