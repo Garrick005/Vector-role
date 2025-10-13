@@ -1,8 +1,8 @@
 Установка и базовая настройка Vector
-=========
+------------------------------------
 
 Данная роль предназначена для установки и базовой настройки Vector на deb дистрибутивы.
-=======
+
 
 Requirements
 ------------
@@ -20,7 +20,7 @@ vector_service_enable: true
 Vars:
 vector_version: "0.44.0"
 vector_config_path: "/etc/vector/vector.yaml"
-=======
+
 
 Example Playbook
 ----------------
