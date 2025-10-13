@@ -1,6 +1,10 @@
 galaxy_info:
   author: Igor Popov
+<<<<<<< HEAD
   description: installing Vector
+=======
+  description: installing VKCOM LightHouse
+>>>>>>> beefe3c (Lighthouse role)
   company: netology-learning
 
   license: license MIT
