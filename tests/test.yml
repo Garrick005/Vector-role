@@ -2,8 +2,5 @@
 - hosts: localhost
   remote_user: root
   roles:
-<<<<<<< HEAD
     - vector-role
-=======
-    - lighthouse
->>>>>>> beefe3c (Lighthouse role)
+
