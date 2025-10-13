@@ -1,5 +1,1 @@
----
-lighthouse_root: /var/www/lighthouse
-lighthouse_repo: https://github.com/VKCOM/lighthouse.git
-lighthouse_nginx_conf_path: /etc/nginx/sites-available/lighthouse
-lighthouse_server_name: lighthouse.local
+
