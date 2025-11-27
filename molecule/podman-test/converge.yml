@@ -1,0 +1,8 @@
+---
+- name: Converge
+  hosts: all
+  gather_facts: false  # отключаем сбор фактов, чтобы не требовался Python
+  tasks:
+    - name: Ensure role tasks are applied
+      import_role:
+        name: vector

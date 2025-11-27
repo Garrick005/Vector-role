@@ -1,13 +1,20 @@
 galaxy_info:
-  author: Igor Popov
+  author: Garrick005
+  role_name: vector
   description: installing Vector
+  namespace: master   
   company: netology-learning
-
-  license: license MIT
-
+  license: MIT
   min_ansible_version: 2.9
-
   platforms:
-  - name: deb-distr
-    versions:
-    - all  
+    - name: Ubuntu
+      versions:
+        - all
+    - name: OracleLinux
+      versions:
+        - 8
+  galaxy_tags:
+    - vector
+    - podman
+
+
