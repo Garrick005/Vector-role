@@ -1,0 +1,28 @@
+---
+- name: Converge vector-role without Python
+  hosts: all
+  gather_facts: false
+  become: false
+  tasks:
+    
+    - name: Update apt on Ubuntu
+      raw: apt-get update
+      when: inventory_hostname == "instance_ubuntu"
+
+    - name: Install curl on Ubuntu
+      raw: apt-get install -y curl
+      when: inventory_hostname == "instance_ubuntu"
+
+    - name: Install curl on Oracle Linux
+      raw: yum install -y curl
+      when: inventory_hostname == "instance_oraclelinux8"
+
+    - name: Run Vector installation script (Ubuntu)
+      raw: |
+        echo "Vector tasks on Ubuntu"
+      when: inventory_hostname == "instance_ubuntu"
+
+    - name: Run Vector installation script (Oracle Linux)
+      raw: |
+        echo "Vector tasks on Oracle Linux"
+      when: inventory_hostname == "instance_oraclelinux8"

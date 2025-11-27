@@ -20,7 +20,13 @@ vector_service_enable: true
 Vars:
 vector_version: "0.44.0"
 vector_config_path: "/etc/vector/vector.yaml"
-
+=======
+---
+lighthouse_root: /var/www/lighthouse
+lighthouse_repo: https://github.com/VKCOM/lighthouse.git
+lighthouse_nginx_conf_path: /etc/nginx/sites-available/lighthouse
+lighthouse_server_name: lighthouse.local
+>>>>>>> beefe3c (Lighthouse role)
 
 Example Playbook
 ----------------
