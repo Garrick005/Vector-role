@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 Установка и базовая настройка Vector
 =========
 
 Данная роль предназначена для установки и базовой настройки Vector на deb дистрибутивы.
-=======
-Установка и базовая настройка VK Lighthouse
-=========
-
-Данная роль предназначена для установки и базовой настройки Lighthouse на deb дистрибутивы.
->>>>>>> beefe3c (Lighthouse role)
 
 Requirements
 ------------
@@ -19,7 +12,6 @@ Role Variables
 --------------
 
 Default vars:
-<<<<<<< HEAD
 vector_version: 'latest'
 vector_service_ensure: 'started'
 vector_service_enable: true
@@ -27,28 +19,14 @@ vector_service_enable: true
 Vars:
 vector_version: "0.44.0"
 vector_config_path: "/etc/vector/vector.yaml"
-=======
----
-lighthouse_root: /var/www/lighthouse
-lighthouse_repo: https://github.com/VKCOM/lighthouse.git
-lighthouse_nginx_conf_path: /etc/nginx/sites-available/lighthouse
-lighthouse_server_name: lighthouse.local
->>>>>>> beefe3c (Lighthouse role)
 
 Example Playbook
 ----------------
 
-<<<<<<< HEAD
 - name: Установка Vector
   hosts: your host
   roles:
     - vector 
-=======
-- name: Установка и настройка LightHouse
-  hosts: your host
-  roles:
-    - lighthouse    
->>>>>>> beefe3c (Lighthouse role)
 
 License
 -------

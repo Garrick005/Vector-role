@@ -1,0 +1,64 @@
+---
+- name: Verify Vector role
+  hosts: all
+  gather_facts: false
+  become: true
+
+  tasks:
+    - name: Check that Vector service is enabled
+      ansible.builtin.systemd:
+        name: vector
+        enabled: yes
+      register: vector_enabled
+      ignore_errors: yes
+
+    - name: Assert that Vector service is enabled
+      ansible.builtin.assert:
+        that:
+          - vector_enabled.enabled is defined
+          - vector_enabled.enabled == true
+        fail_msg: "Vector service is not enabled"
+        success_msg: "Vector service is enabled"
+
+    - name: Check that Vector service is running
+      ansible.builtin.systemd:
+        name: vector
+        state: started
+      register: vector_running
+      ignore_errors: yes
+
+    - name: Assert that Vector service is running
+      ansible.builtin.assert:
+        that:
+          - vector_running.status is defined
+          - vector_running.status == 'started'
+        fail_msg: "Vector service is not running"
+        success_msg: "Vector service is running"
+
+    - name: Validate Vector configuration
+      ansible.builtin.command:
+        cmd: vector validate
+      register: vector_validate
+      ignore_errors: yes
+
+    - name: Assert that Vector configuration is valid
+      ansible.builtin.assert:
+        that:
+          - vector_validate.rc == 0
+        fail_msg: "Vector configuration is invalid"
+        success_msg: "Vector configuration is valid"
+
+    - name: Ensure Vector is listening on default port (example: 9000)
+      ansible.builtin.wait_for:
+        host: 127.0.0.1
+        port: 9000
+        timeout: 5
+      register: vector_port
+      ignore_errors: yes
+
+    - name: Assert that Vector is listening on port 9000
+      ansible.builtin.assert:
+        that:
+          - vector_port.elapsed < 5
+        fail_msg: "Vector is not listening on port 9000"
+        success_msg: "Vector is listening on port 9000"

@@ -1,5 +1,6 @@
 ---
-lighthouse_root: /var/www/lighthouse
-lighthouse_repo: https://github.com/VKCOM/lighthouse.git
-lighthouse_nginx_conf_path: /etc/nginx/sites-available/lighthouse
-lighthouse_server_name: lighthouse.local
+# defaults file for vector-role
+
+vector_version: 'latest'
+vector_service_ensure: 'started'
+vector_service_enable: true
